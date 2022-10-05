@@ -9,11 +9,8 @@
         //- Variables 
 
         dcl-s wFecha like(wFechaT);
-
-        //- Process 
-
-        wFecha = %Char(InDate:*Iso0);
-
+            //- Process 
+            wFecha = %Char(InDate:*Iso0);
         Return wFecha;
  
       end-Proc; 

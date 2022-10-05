@@ -1,12 +1,6 @@
 **free
     /copy COPY
     // Cómo voy a entrar al programa
-
-    dcl-pr PrEntrada; // prototipo
-        parNombre like(wNombreT);
-        parId like(wIdT);
-    end-pr;  
-
     //El export significa que se va a poder usar en otra parte
     dcl-Proc PrEntrada Export; //implementacion del prototipo
         dcl-pi *n;
@@ -19,11 +13,15 @@
     // estructuras
     dcl-Ds DsUsuario likeDs(DsUsuarioT);
 
+    // Variables
+
+    dcl-s wSqlState like(wSqlStateT);
+
     //proceso
         DsUsuario.Nombre=InNombre;
         DsUsuario.Id=InId;
         DsUsuario.Fecha=FnFormatoFecha(%Date());
         DsUsuario.Tiempo=FnFormatoTiempo(%Time());
         
-        PrInsertar(DsInsertar);
+        PrInsertar(DsInsertar:wSqlState);
     end-Proc;
