@@ -15,7 +15,8 @@ en el copy tenemos las definiciones
       dcl-s wMssgIdT char(7) Template;
       dcl-s wFechaT varchar(100) Template;
       dcl-s wTiempoT varchar(100) Template;
-      dcl-s wSqlStateT char(5s) Template;
+      dcl-s wSqlStateT char(5) Template;
+      dcl-s wMensajeT Varchar(100) Template;
 
       dcl-pr PrInsertar;
         parUsuario likeDs(DsUsuarioT) Const;
@@ -28,6 +29,10 @@ en el copy tenemos las definiciones
 
       dcl-pr FnFormatoFecha like(wFechaT);
           parDate Date(*ISO) Const;
+      end-pr;
+
+      dcl-pr FnMensajeStt like(wMssgIdT);
+          parsqlstate Like(wSqlStateT) Const;
       end-pr;
 
       dcl-pr PrEntrada; // prototipo

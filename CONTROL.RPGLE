@@ -24,4 +24,6 @@
         DsUsuario.Tiempo=FnFormatoTiempo(%Time());
         
         PrInsertar(DsInsertar:wSqlState);
-    end-Proc;
+
+    
+
