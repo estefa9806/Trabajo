@@ -15,6 +15,15 @@ en el copy tenemos las definiciones
       dcl-s wMssgIdT char(7) Template;
       dcl-s wFechaT varchar(100) Template;
       dcl-s wTiempoT varchar(100) Template;
+
       dcl-pr PrInsertar;
         parUsuario likeDs(DsUsuarioT);
       end-pr;  
+
+      dcl-pr FnFormatoTiempo like(wTiempoT);
+          parTime Time(*ISO) Const;
+      end-pr;
+
+      dcl-pr FnFormatoFecha like(wFechaT);
+          parDate Date(*ISO) Const;
+      end-pr;
